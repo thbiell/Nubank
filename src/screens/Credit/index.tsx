@@ -8,17 +8,13 @@ import pix from "../../assets/pix.png";
 import Setting from "../../assets/setting.png";
 import Wallet from "../../assets/Wallet.png";
 
-const Home = ({ navigation }) => {
+const Credit = () => {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
         <View style={styles.header}>
           <Image source={Logo} />
-          <Pressable
-        onPress={() => navigation.navigate("Config")}
-      >
-        <Image source={Setting} />
-      </Pressable>
+      
           
         </View>
         <View style={styles.card}>
@@ -34,11 +30,7 @@ const Home = ({ navigation }) => {
         <View style={styles.cardDetails}>
           <View style={styles.cardDetailsHeader}>
             <Text style={styles.cardDetailsHeaderText}>Saldo disponível</Text>
-            <Pressable
-        onPress={() => navigation.navigate("Credit")}
-      >
-        <Image source={Wallet} />
-      </Pressable>
+            
           </View>
           <Text style={styles.cardDetailsTextValue}>R$47.500,32</Text>
         </View>
@@ -50,11 +42,7 @@ const Home = ({ navigation }) => {
           showsHorizontalScrollIndicator={false}
           horizontal={true}
         >
-          <Pressable style={styles.footerCard}
-          onPress={() => navigation.navigate("Pix")}>
-            <Image source={pix} />
-            <Text style={styles.footerCardText}>Fazer um Pix</Text>
-          </Pressable>
+          
           <View style={styles.footerCard}>
             <Image source={boleto} />
             <Text style={styles.footerCardText}>Pagar um boleto</Text>
@@ -173,4 +161,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Home;
+export default Credit;

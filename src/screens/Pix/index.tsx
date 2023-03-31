@@ -1,4 +1,4 @@
-import { Image, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 
 import boleto from "../../assets/boleto.png";
 import dinheiro from "../../assets/dinheiro.png";
@@ -8,18 +8,13 @@ import pix from "../../assets/pix.png";
 import Setting from "../../assets/setting.png";
 import Wallet from "../../assets/Wallet.png";
 
-const Home = ({ navigation }) => {
+export function Pix() {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
         <View style={styles.header}>
           <Image source={Logo} />
-          <Pressable
-        onPress={() => navigation.navigate("Config")}
-      >
-        <Image source={Setting} />
-      </Pressable>
-          
+          <Image source={Setting} />
         </View>
         <View style={styles.card}>
           <View style={styles.cardHeader}>
@@ -34,11 +29,7 @@ const Home = ({ navigation }) => {
         <View style={styles.cardDetails}>
           <View style={styles.cardDetailsHeader}>
             <Text style={styles.cardDetailsHeaderText}>Saldo disponível</Text>
-            <Pressable
-        onPress={() => navigation.navigate("Credit")}
-      >
-        <Image source={Wallet} />
-      </Pressable>
+            <Image source={Wallet} />
           </View>
           <Text style={styles.cardDetailsTextValue}>R$47.500,32</Text>
         </View>
@@ -50,11 +41,10 @@ const Home = ({ navigation }) => {
           showsHorizontalScrollIndicator={false}
           horizontal={true}
         >
-          <Pressable style={styles.footerCard}
-          onPress={() => navigation.navigate("Pix")}>
+          <View style={styles.footerCard}>
             <Image source={pix} />
             <Text style={styles.footerCardText}>Fazer um Pix</Text>
-          </Pressable>
+          </View>
           <View style={styles.footerCard}>
             <Image source={boleto} />
             <Text style={styles.footerCardText}>Pagar um boleto</Text>
@@ -172,5 +162,3 @@ const styles = StyleSheet.create({
     fontWeight: "600",
   },
 });
-
-export default Home;

@@ -1,11 +1,17 @@
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from "expo-status-bar";
-import { Home } from "./src/screens/Home";
+import MainNavigator from './src/screens/MainNavigator';
 
-export default function App() {
+
+function App() {
   return (
-    <>
-      <Home />
+    <NavigationContainer>
+      <MainNavigator />
       <StatusBar style="light" />
-    </>
+    </NavigationContainer>
+
   );
 }
+
+export default App;
